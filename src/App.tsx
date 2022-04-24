@@ -43,13 +43,13 @@ const App: React.FC = () => {
         <Suspense fallback={<PageLoader />}>
           <Switch>
             <Route path="/" exact>
-              <Home />
+              <Farms />
             </Route>
             <Route path="/farms">
               <Farms />
             </Route>
             <Route path="/nests">
-              <Farms tokenMode/>
+              <Farms tokenMode />
             </Route>
             {/* <Route path="/pools"> */}
             {/*  <Pools /> */}
