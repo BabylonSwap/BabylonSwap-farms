@@ -1,5 +1,5 @@
 {
-  "name": "goose-frontend",
+  "name": "babylon-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -33,6 +33,8 @@
     "@binance-chain/bsc-use-wallet": "^0.8.1",
     "@crowdin/crowdin-api-client": "^1.10.1",
     "@ethersproject/abi": "^5.0.7",
+    "@ethersproject/providers": "^5.6.4",
+    "@pancakeswap-libs/sdk": "loganworld/babylonswap-sdk",
     "@pancakeswap-libs/uikit": "loganworld/babylonswap-uikit",
     "@reduxjs/toolkit": "^1.5.0",
     "@types/react": "^17.0.0",
@@ -53,7 +55,7 @@
     "react-scripts": "^4.0.1",
     "react-twitter-widgets": "^1.9.5",
     "styled-components": "^5.1.1",
-    "typescript": "^4.1.3",
+    "typescript": "4.1.3",
     "universal-cookie": "^4.0.4",
     "web3": "^1.3.1"
   },

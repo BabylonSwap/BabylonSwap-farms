@@ -65,11 +65,11 @@ const config: MenuEntry[] = [
   //     },
   //     {
   //       label: 'CoinGecko',
-  //       href: 'https://www.coingecko.com/en/coins/goose-finance',
+  //       href: 'https://www.coingecko.com/en/coins/babylon-finance',
   //     },
   //     {
   //       label: 'CoinMarketCap',
-  //       href: 'https://coinmarketcap.com/currencies/goose-finance/',
+  //       href: 'https://coinmarketcap.com/currencies/babylon-finance/',
   //     },
   //     {
   //       label: 'AstroTools',
@@ -87,7 +87,7 @@ const config: MenuEntry[] = [
   //     },
   //     {
   //       label: 'Docs',
-  //       href: 'https://goosedefi.gitbook.io/goose-finance/',
+  //       href: 'https://goosedefi.gitbook.io/babylon-finance/',
   //     },
   //     {
   //       label: 'Blog',
@@ -108,7 +108,7 @@ const config: MenuEntry[] = [
   // {
   //   label: 'Audit by CertiK',
   //   icon: 'AuditIcon',
-  //   href: 'https://certik.org/projects/goose-finance',
+  //   href: 'https://certik.org/projects/babylon-finance',
   // },
 ]
 
