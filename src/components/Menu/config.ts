@@ -28,17 +28,17 @@ const config: MenuEntry[] = [
   {
     label: 'Mining bank',
     icon: 'HamburgerIcon',
-    href: 'http://localhost:3000/#/MiningBank'
+    href: 'http://localhost:3001/#/MiningBank'
   },
   {
     label: 'Evengalist',
     icon: 'PoolIcon',
-    href: 'http://localhost:3000/#/Evengalist'
+    href: 'http://localhost:3001/#/Evengalist'
   },
   {
     label: 'Lottery',
     icon: 'TicketIcon',
-    href: 'http://localhost:3000/#/Loulette'
+    href: 'http://localhost:3001/#/Loulette'
   },
   // {
   //   label: 'Pools',

@@ -14,14 +14,14 @@ const FarmTabButtons = ({ stakedOnly, setStakedOnly }) => {
         <Toggle checked={stakedOnly} onChange={() => setStakedOnly(!stakedOnly)} />
         <Text> {TranslateString(699, 'Staked only')}</Text>
       </ToggleWrapper>
-      <ButtonMenu activeIndex={isExact ? 0 : 1} size="sm" variant="subtle">
+      {/* <ButtonMenu activeIndex={isExact ? 0 : 1} size="sm" variant="subtle">
         <ButtonMenuItem style={{ height: "50px" }} as={Link} to={`${url}`}>
           {TranslateString(698, 'Active')}
         </ButtonMenuItem>
         <ButtonMenuItem style={{ height: "50px" }} as={Link} to={`${url}/history`}>
           {TranslateString(700, 'Inactive')}
         </ButtonMenuItem>
-      </ButtonMenu>
+      </ButtonMenu> */}
     </Wrapper>
   )
 }
