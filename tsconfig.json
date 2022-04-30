@@ -23,6 +23,10 @@
     "noImplicitAny": false,
     "noFallthroughCasesInSwitch": true
   },
+  "exclude": [
+    "node_modules",
+    "cypress"
+  ],
   "include": [
     "src"
   ]
