@@ -12,11 +12,11 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Exchange',
-        href: 'http://localhost:3001/#/swap',
+        href: 'http://localhost:3000/#/swap',
       },
       {
         label: 'Liquidity',
-        href: 'http://localhost:3001/#/pool',
+        href: 'http://localhost:3000/#/pool',
       },
     ],
   },
@@ -28,12 +28,12 @@ const config: MenuEntry[] = [
   {
     label: 'Mining bank',
     icon: 'HamburgerIcon',
-    href: 'http://localhost:3001/#/MiningBank'
+    href: 'http://localhost:3000/#/MiningBank'
   },
   {
     label: 'Evengalist',
     icon: 'PoolIcon',
-    href: 'http://localhost:3001/#/Evengalist'
+    href: 'http://localhost:3000/#/Evengalist'
   },
   // {
   //   label: 'Roulette',
