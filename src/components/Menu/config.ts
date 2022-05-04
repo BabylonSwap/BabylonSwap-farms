@@ -30,11 +30,6 @@ const config: MenuEntry[] = [
     icon: 'HamburgerIcon',
     href: 'http://localhost:3000/#/MiningBank'
   },
-  {
-    label: 'Evengalist',
-    icon: 'PoolIcon',
-    href: 'http://localhost:3000/#/Evengalist'
-  },
   // {
   //   label: 'Roulette',
   //   icon: 'TicketIcon',

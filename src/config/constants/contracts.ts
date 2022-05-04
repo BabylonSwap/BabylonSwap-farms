@@ -1,6 +1,6 @@
 export default {
   cake: {
-    56: '0x6Cce1fef6247b722944cdA1e555754a830680F6E',
+    56: '0xBD8ae8c42076FbEa34350D3dA56E6edb4170e5cF',
     97: '',
   },
   masterChef: {
@@ -24,7 +24,7 @@ export default {
     97: '0x67ADCB4dF3931b0C5Da724058ADC2174a9844412',
   },
   busd: {
-    56: '0x55d398326f99059fF775485246999027B3197955',
+    56: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
     97: '',
   },
 }

@@ -123,7 +123,7 @@
     {
       "data": {
         "stringId": 320,
-        "text": "Stake LP tokens to earn XBT"
+        "text": "Stake LP tokens to earn tokens"
       }
     },
     {
@@ -1107,13 +1107,13 @@
     {
       "data": {
         "stringId": 696,
-        "text": "Stake LP tokens to earn XBT"
+        "text": "Stake LP tokens to earn tokens"
       }
     },
     {
       "data": {
         "stringId": 698,
-        "text": "Active"
+        "text": "Native Farms"
       }
     },
     {
@@ -1125,7 +1125,7 @@
     {
       "data": {
         "stringId": 700,
-        "text": "Inactive"
+        "text": "Personal Farms"
       }
     },
     {
