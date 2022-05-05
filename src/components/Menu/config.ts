@@ -1,11 +1,11 @@
 import { MenuEntry } from '@pancakeswap-libs/uikit'
 
 const config: MenuEntry[] = [
-  {
-    label: 'Home',
-    icon: 'HomeIcon',
-    href: 'https://babylonswap.finance/',
-  },
+//   {
+//     label: 'Home',
+//     icon: 'HomeIcon',
+//     href: 'https://babylonswap.finance/',
+//   },
   {
     label: 'Trade',
     icon: 'TradeIcon',
@@ -28,7 +28,7 @@ const config: MenuEntry[] = [
   {
     label: 'Mining bank',
     icon: 'InfoIcon',
-    href: '/MiningBank'
+    href: 'https://babylonswap.finance/#/MiningBank'
   },
   {
     label: 'Glossary',
