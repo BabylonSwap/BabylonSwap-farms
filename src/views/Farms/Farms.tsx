@@ -107,7 +107,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
             setPersonalFarms([farm]);
         } catch (err: any) {
             console.log("handle find error", err.message);
-            
+
             NotificationManager.error("Invalide address", 'Find Farm failed');
         }
     }
@@ -134,10 +134,13 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
                 <div>
                     <Divider />
 
+                    <Heading as="h1" size="md" color="primary" mb="10px" style={{ textAlign: 'center' }}>
+                        Enter LP Contract Address
+                    </Heading>
                     <FlexLayout>
                         <Wrapper>
                             <Input value={lpAddress} onChange={(e) => setLpAddress(e.target.value)} />
-                            <Button style={{ height: "50px" }} onClick={handleFind}>
+                            <Button style={{ height: "50px",marginLeft:"10px"}} onClick={handleFind}>
                                 Find
                             </Button>
                         </Wrapper>
