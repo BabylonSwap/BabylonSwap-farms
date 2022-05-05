@@ -116,11 +116,11 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
         <Page>
             <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
                 {
-                    TranslateString(320, 'Stake LP tokens to earn tokens')
+                    TranslateString(320, 'Stake LP Tokens To Earn Tokens')
                 }
             </Heading>
             <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
-                All add listed Pair on Babylonswap has farm and you can earn tokens by staking on it
+                Any Pair Created on BabylonSwap has a Farm where you can Earn Money
             </Heading>
             <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} isPublic={isPublic} setIsPublic={setIsPublic} />
             {isPublic ? (<div>
