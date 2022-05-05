@@ -4,7 +4,7 @@ const config: MenuEntry[] = [
   {
     label: 'Home',
     icon: 'HomeIcon',
-    href: 'http://localhost:3000/',
+    href: 'https://babylonswap.finance/',
   },
   {
     label: 'Trade',
@@ -12,11 +12,11 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Exchange',
-        href: 'http://localhost:3000/#/swap',
+        href: 'https://babylonswap.finance/#/swap',
       },
       {
         label: 'Liquidity',
-        href: 'http://localhost:3000/#/pool',
+        href: 'https://babylonswap.finance/#/pool',
       },
     ],
   },
@@ -28,7 +28,7 @@ const config: MenuEntry[] = [
   {
     label: 'Mining bank',
     icon: 'HamburgerIcon',
-    href: 'http://localhost:3000/#/MiningBank'
+    href: 'https://babylonswap.finance/#/MiningBank'
   },
   // {
   //   label: 'Roulette',
