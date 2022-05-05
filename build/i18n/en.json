@@ -123,7 +123,7 @@
     {
       "data": {
         "stringId": 320,
-        "text": "Stake LP tokens to earn XBT"
+        "text": "Stake LP tokens to earn tokens"
       }
     },
     {
@@ -579,7 +579,7 @@
     {
       "data": {
         "stringId": 508,
-        "text": "The project gets the BNB, Goose Finance burns the XBT."
+        "text": "The project gets the BNB, Babylon Finance burns the XBT."
       }
     },
     {
@@ -597,7 +597,7 @@
     {
       "data": {
         "stringId": 514,
-        "text": "Launch your project with Goose Finance, Binance Smart Chain\u2019s most-used AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on BSC."
+        "text": "Launch your project with Babylon Finance, Binance Smart Chain\u2019s most-used AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on BSC."
       }
     },
     {
@@ -753,7 +753,7 @@
     {
       "data": {
         "stringId": 576,
-        "text": "Goose Finance"
+        "text": "Babylon Finance"
       }
     },
     {
@@ -1107,13 +1107,13 @@
     {
       "data": {
         "stringId": 696,
-        "text": "Stake LP tokens to earn XBT"
+        "text": "Stake LP tokens to earn tokens"
       }
     },
     {
       "data": {
         "stringId": 698,
-        "text": "Active"
+        "text": "Native Farms"
       }
     },
     {
@@ -1125,7 +1125,7 @@
     {
       "data": {
         "stringId": 700,
-        "text": "Inactive"
+        "text": "Personal Farms"
       }
     },
     {
