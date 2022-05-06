@@ -97,7 +97,6 @@ export const fetchFarm = async (farmConfig) => {
             params: [farmConfig.pid],
         }
     ])
-
     //   const allocPoint = new BigNumber(info.allocPoint._hex)
 
     return {
@@ -112,7 +111,7 @@ export const fetchFarm = async (farmConfig) => {
 }
 const fetchFarms = async () => {
     const data = await Promise.all(
-        farmsConfig.map((farmConfig)=>fetchFarm(farmConfig)),
+        farmsConfig.map((farmConfig) => fetchFarm(farmConfig)),
     )
     return data
 }
@@ -154,7 +153,10 @@ export const fetchFarmIndex = async (lpAdress) => {
         params: [lpAdress]
     }])
 
-    if(String(lpIndex) === "0") throw new Error("Invalide LP address");
+    if (String(lpIndex) === "0" && lpAdress.toLowerCase() !== ("0x015e5da8def0679dec521fdfbf6bc8706ec5577b").toLowerCase()) {
+        console.log(String(lpIndex) === "0", lpAdress.toLowerCase() !== ("0x015e5da8def0679dec521fdfbf6bc8706ec5577b").toLowerCase());
+        throw new Error("Invalid LP address");
+    }
 
     return {
         pid: Number(lpIndex),

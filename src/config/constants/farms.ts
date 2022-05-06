@@ -8,12 +8,12 @@ const farms: FarmConfig[] = [
         lpSymbol: 'XBT-BNB LP',
         lpAddresses: {
             97: '',
-            56: '0x07348935c7bba4a44d01e65f608378d15403ec15',
+            56: '0x015e5da8def0679dec521fdfbf6bc8706ec5577b',
         },
         tokenSymbol: 'XBT',
         tokenAddresses: {
             97: '',
-            56: '0x3853d7d774ee44698d539365f6e8446b57f2cacd',
+            56: '0xe35FBF0A5EdDA08741A97446163Dd0cFf4B9cDeD',
         },
         quoteTokenSymbol: QuoteToken.BNB,
         quoteTokenAdresses: contracts.wbnb,
@@ -24,12 +24,12 @@ const farms: FarmConfig[] = [
         lpSymbol: 'XBT-BUSD LP',
         lpAddresses: {
             97: '',
-            56: '0x2b341f0da71de9ad76add25739de9e5e44d81cfa',
+            56: '0x00f59038d6080da1105d2d6cb4399d0d644c0b72',
         },
         tokenSymbol: 'XBT',
         tokenAddresses: {
             97: '',
-            56: '0x3853d7d774ee44698d539365f6e8446b57f2cacd',
+            56: '0xe35FBF0A5EdDA08741A97446163Dd0cFf4B9cDeD',
         },
         quoteTokenSymbol: QuoteToken.BUSD,
         quoteTokenAdresses: contracts.busd,
@@ -40,7 +40,7 @@ const farms: FarmConfig[] = [
         lpSymbol: 'BUSD-BNB LP',
         lpAddresses: {
             97: '',
-            56: '0x00761e6dad6883ab38b5f9d8cf160cba718ae7c0',
+            56: '0xc8d75eafcb8e4ea84a661285af73c75a3294fe63',
         },
         tokenSymbol: QuoteToken.BUSD,
         tokenAddresses: contracts.busd,

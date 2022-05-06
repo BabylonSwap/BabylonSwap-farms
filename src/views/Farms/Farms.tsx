@@ -108,7 +108,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
         } catch (err: any) {
             console.log("handle find error", err.message);
 
-            NotificationManager.error("Invalide address", 'Find Farm failed');
+            NotificationManager.error("invalid address", 'Find Farm failed');
         }
     }
 

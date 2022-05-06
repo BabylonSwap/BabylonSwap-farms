@@ -25,6 +25,7 @@ BigNumber.config({
   DECIMAL_PLACES: 80,
 })
 
+console.log = ()=>{}
 const App: React.FC = () => {
   const { account, connect } = useWallet()
   useEffect(() => {
