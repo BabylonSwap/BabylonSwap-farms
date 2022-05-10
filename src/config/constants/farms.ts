@@ -3,33 +3,33 @@ import { FarmConfig, QuoteToken } from './types'
 
 const farms: FarmConfig[] = [
     {
-        pid: 0,
+        pid: 3,
         risk: 5,
         lpSymbol: 'XBT-BNB LP',
         lpAddresses: {
             97: '',
-            56: '0x015e5da8def0679dec521fdfbf6bc8706ec5577b',
+            56: '0xb53ee64090D9B36932CA8a359732D60eF40c0Fe9',
         },
         tokenSymbol: 'XBT',
         tokenAddresses: {
             97: '',
-            56: '0xe35FBF0A5EdDA08741A97446163Dd0cFf4B9cDeD',
+            56: '0x5BbD197EeCfECB05a07909020a524bfb155c4E2a',
         },
         quoteTokenSymbol: QuoteToken.BNB,
         quoteTokenAdresses: contracts.wbnb,
     },
     {
-        pid: 2,
+        pid: 4,
         risk: 1,
         lpSymbol: 'XBT-BUSD LP',
         lpAddresses: {
             97: '',
-            56: '0x00f59038d6080da1105d2d6cb4399d0d644c0b72',
+            56: '0xB5e5932D907690930E7F2B72A8D77C469C2Efe9c',
         },
         tokenSymbol: 'XBT',
         tokenAddresses: {
             97: '',
-            56: '0xe35FBF0A5EdDA08741A97446163Dd0cFf4B9cDeD',
+            56: '0x5BbD197EeCfECB05a07909020a524bfb155c4E2a',
         },
         quoteTokenSymbol: QuoteToken.BUSD,
         quoteTokenAdresses: contracts.busd,
