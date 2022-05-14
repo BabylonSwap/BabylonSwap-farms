@@ -3,7 +3,7 @@ import { FarmConfig, QuoteToken } from './types'
 
 const farms: FarmConfig[] = [
     {
-        pid: 3,
+        pid: 4,
         risk: 5,
         lpSymbol: 'XBT-BNB LP',
         lpAddresses: {
@@ -17,9 +17,10 @@ const farms: FarmConfig[] = [
         },
         quoteTokenSymbol: QuoteToken.BNB,
         quoteTokenAdresses: contracts.wbnb,
+        isNative : true
     },
     {
-        pid: 4,
+        pid: 5,
         risk: 1,
         lpSymbol: 'XBT-BUSD LP',
         lpAddresses: {
@@ -33,6 +34,7 @@ const farms: FarmConfig[] = [
         },
         quoteTokenSymbol: QuoteToken.BUSD,
         quoteTokenAdresses: contracts.busd,
+        isNative : true
     },
     {
         pid: 1,
@@ -46,7 +48,21 @@ const farms: FarmConfig[] = [
         tokenAddresses: contracts.busd,
         quoteTokenSymbol: QuoteToken.BNB,
         quoteTokenAdresses: contracts.wbnb,
+        isNative : true
     }
 ]
+
+export const addFarms = (farm: FarmConfig) => {
+    const inExist = farms.findIndex(_farm => _farm.pid === farm.pid);
+    console.error("inExist", inExist, farms);
+    if (inExist === -1) {
+        if (farms.length === 3)
+            farms.push(farm)
+        else farms[3] = farm;
+        console.error("inExist farms", farms);
+        return true;
+    }
+    return false;
+}
 
 export default farms

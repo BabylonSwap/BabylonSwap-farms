@@ -9,7 +9,7 @@ const CHAIN_ID = process.env.REACT_APP_CHAIN_ID
 
 export const fetchFarmUserAllowances = async (account: string) => {
     const masterChefAdress = getMasterChefAddress()
-
+    console.error("fetchFarmUserAllowancesobject", farmsConfig);
     const calls = farmsConfig.map((farm) => {
         const lpContractAddress = farm.isTokenOnly ? farm.tokenAddresses[CHAIN_ID] : farm.lpAddresses[CHAIN_ID]
         return { address: lpContractAddress, name: 'allowance', params: [account, masterChefAdress] }

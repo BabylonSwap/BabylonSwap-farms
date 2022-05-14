@@ -12,13 +12,15 @@ import FlexLayout from 'components/layout/Flex'
 import Page from 'components/layout/Page'
 import { useFarms, usePriceBnbBusd, usePriceCakeBusd } from 'state/hooks'
 import useRefresh from 'hooks/useRefresh'
-import { fetchFarmUserDataAsync } from 'state/actions'
+import { fetchFarmsPublicDataAsync,fetchFarmUserDataAsync ,addFarmDatas} from 'state/actions'
 import { QuoteToken } from 'config/constants/types'
 import useI18n from 'hooks/useI18n'
 import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 import FarmTabButtons from './components/FarmTabButtons'
 import Divider from './components/Divider'
 import { fetchFarm, fetchFarmIndex } from '../../state/farms/fetchFarms'
+import { setFarmsPublicData } from "../../state/farms"
+import farms, { addFarms } from "../../config/constants/farms"
 
 export interface FarmsProps {
     tokenMode?: boolean
@@ -100,10 +102,12 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
         let farm;
         try {
             farmIndex = await fetchFarmIndex(lpAddress);
-            console.log("farmIndex", farmIndex);
+            dispatch(addFarmDatas(farmIndex));
+            console.error("farmIndex", farmIndex);
+            dispatch(fetchFarmsPublicDataAsync);
+            dispatch(fetchFarmUserDataAsync(account));
             farm = await fetchFarm(farmIndex);
-
-            console.log("farm", farm);
+            console.error("farm", farm, farms);
             setPersonalFarms([farm]);
         } catch (err: any) {
             console.log("handle find error", err.message);
@@ -140,7 +144,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
                     <FlexLayout>
                         <Wrapper>
                             <Input value={lpAddress} onChange={(e) => setLpAddress(e.target.value)} />
-                            <Button style={{ height: "50px",marginLeft:"10px"}} onClick={handleFind}>
+                            <Button style={{ height: "50px", marginLeft: "10px" }} onClick={handleFind}>
                                 Find
                             </Button>
                         </Wrapper>
