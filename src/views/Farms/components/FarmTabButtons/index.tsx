@@ -15,10 +15,10 @@ const FarmTabButtons = ({ stakedOnly, setStakedOnly, isPublic, setIsPublic }) =>
                 <Text> {TranslateString(699, 'Staked only')}</Text>
             </ToggleWrapper> */}
             <Button style={{ height: "50px" }} onClick={() => setIsPublic(true)}>
-                {TranslateString(698, 'Public')}
+                {TranslateString(698, 'Native Farms')}
             </Button>
             <Button style={{ height: "50px" }} onClick={() => setIsPublic(false)}>
-                {TranslateString(700, 'Personal')}
+                {TranslateString(700, 'Non-Native Farms')}
             </Button>
         </Wrapper>
     )
