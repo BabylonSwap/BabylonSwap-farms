@@ -38,7 +38,7 @@ export const fetchToken = async (tokenAddress) => {
 }
 
 export const fetchLPToken = async (tokenAddress1, tokenAddress2) => {
-    
+
     const calls = [
         {
             address: getFactoryAddress(),
@@ -51,10 +51,9 @@ export const fetchLPToken = async (tokenAddress1, tokenAddress2) => {
         lpAddress
     ] = await multicall(factotyABI, calls)
 
-    if(lpAddress.toLowerCase() === "0x0000000000000000000000000000000000000000".toLowerCase()) throw new Error("Unregistered pair")
-    return {
-        lpAddress
-    }
+    console.error(lpAddress[0])
+    if (lpAddress[0].toLowerCase() === "0x0000000000000000000000000000000000000000".toLowerCase()) throw new Error("Unregistered pair")
+    return lpAddress[0]
 }
 
 export const fetchFarm = async (farmConfig) => {
