@@ -36,7 +36,6 @@ export default function PoolFinder() {
 
     const handleFindLp = useCallback(async () => {
         try {
-            console.error(currency0, currency1);
             if (!currency0 || !currency1) throw new Error("Invalid token");
             const lpAddress = await fetchLPToken(currency0.address, currency1.address);
             history.push(`/farms?lp=${lpAddress}`)

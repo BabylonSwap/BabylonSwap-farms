@@ -51,7 +51,6 @@ export const fetchLPToken = async (tokenAddress1, tokenAddress2) => {
         lpAddress
     ] = await multicall(factotyABI, calls)
 
-    console.error(lpAddress[0])
     if (lpAddress[0].toLowerCase() === "0x0000000000000000000000000000000000000000".toLowerCase()) throw new Error("Unregistered pair")
     return lpAddress[0]
 }

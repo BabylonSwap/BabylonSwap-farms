@@ -91,7 +91,6 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
         bunnyBurnCount: parseInt(bunnyBurnCount, 10),
       }))
     } catch (error) {
-      console.error(error)
     }
   }, [bunnyId])
 
@@ -102,7 +101,6 @@ const NftCard: React.FC<NftCardProps> = ({ nft }) => {
       try {
         await fetchDetails()
       } catch (error) {
-        console.error(error)
       } finally {
         setState((prevState) => ({ ...prevState, isOpen: !prevState.isOpen }))
       }

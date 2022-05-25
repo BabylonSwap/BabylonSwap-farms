@@ -28,7 +28,6 @@ export const farmsSlice = createSlice({
                 return state.data.findIndex((f) => f.pid === farm.pid) === -1
             })
             state.data = state.data.concat(newFarmsData);
-            console.error("setFarmsPublicData", state.data);
         },
         setFarmUserData: (state, action) => {
             const { arrayOfUserDataObjects } = action.payload
@@ -46,7 +45,6 @@ export const { setFarmsPublicData, setFarmUserData } = farmsSlice.actions
 // Thunks
 export const fetchFarmsPublicDataAsync = () => async (dispatch) => {
     const farms = await fetchFarms()
-    console.error("fetchFarmsPublicDataAsync", farms);
     dispatch(setFarmsPublicData(farms))
 }
 export const fetchFarmUserDataAsync = (account) => async (dispatch) => {

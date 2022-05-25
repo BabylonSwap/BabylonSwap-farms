@@ -28,7 +28,6 @@ interface FarmCardActionsProps {
 const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account }) => {
     const TranslateString = useI18n()
     const [requestedApproval, setRequestedApproval] = useState(false)
-    // console.error("farm : CardActions", farm);
     const { pid, lpAddresses, tokenAddresses, isTokenOnly, depositFeeBP } = farm
     const { allowance, tokenBalance, stakedBalance, earnings } = useFarmUser(pid)
     const lpAddress = lpAddresses[process.env.REACT_APP_CHAIN_ID]
@@ -51,7 +50,6 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account }
             await onApprove()
             setRequestedApproval(false)
         } catch (e) {
-            console.error(e)
         }
     }, [onApprove])
 

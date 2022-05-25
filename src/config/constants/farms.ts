@@ -54,12 +54,10 @@ const farms: FarmConfig[] = [
 
 export const addFarms = (farm: FarmConfig) => {
     const inExist = farms.findIndex(_farm => _farm.pid === farm.pid);
-    console.error("inExist", inExist, farms);
     if (inExist === -1) {
         if (farms.length === 3)
             farms.push(farm)
         else farms[3] = farm;
-        console.error("inExist farms", farms);
         return true;
     }
     return false;

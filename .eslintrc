@@ -54,6 +54,7 @@
         "react/no-unused-prop-types": "off",
         "@typescript-eslint/no-empty-function": "off",
         "react-hooks/exhaustive-deps": "off",
+        "no-empty": "off",
         "react/self-closing-comp": "off"
         // End temporary rules
     }

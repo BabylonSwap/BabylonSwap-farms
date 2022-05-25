@@ -57,7 +57,6 @@ const FarmedStakingCard = () => {
         setRequestedClaim(false)
       }
     } catch (e) {
-      console.error(e)
     }
   }, [onMultiClaim, setRequestedClaim])
 

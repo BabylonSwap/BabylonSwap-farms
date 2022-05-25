@@ -80,7 +80,6 @@ const IfoCardContribute: React.FC<Props> = ({
             setPendingTx(false)
           } catch (e) {
             setPendingTx(false)
-            console.error(e)
           }
         }}
       >

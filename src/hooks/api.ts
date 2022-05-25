@@ -38,7 +38,6 @@ export const useGetStats = () => {
 
         setData(responsedata)
       } catch (error) {
-        console.error('Unable to fetch data:', error)
       }
     }
 

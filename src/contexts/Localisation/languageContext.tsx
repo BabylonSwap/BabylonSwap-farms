@@ -70,8 +70,6 @@ const LanguageContextProvider = ({ children }) => {
         })
         .then(() => setTranslatedLanguage(selectedLanguage))
         .catch((e) => {
-          console.error("ERROR");
-          console.error(e);
           setTranslations(['error'])
         })
     }
