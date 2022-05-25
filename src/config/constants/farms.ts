@@ -3,46 +3,46 @@ import { FarmConfig, QuoteToken } from './types'
 
 const farms: FarmConfig[] = [
     {
-        pid: 4,
+        pid: 1,
         risk: 5,
         lpSymbol: 'XBT-BNB LP',
         lpAddresses: {
             97: '',
-            56: '0xb53ee64090D9B36932CA8a359732D60eF40c0Fe9',
+            56: '0x4CEFa7F1B27E414768bb837661332E8603b58791',
         },
         tokenSymbol: 'XBT',
         tokenAddresses: {
             97: '',
-            56: '0x5BbD197EeCfECB05a07909020a524bfb155c4E2a',
+            56: '0xe329102DA0E7E135656CD72CDc983c81f27CB5B6',
         },
         quoteTokenSymbol: QuoteToken.BNB,
         quoteTokenAdresses: contracts.wbnb,
         isNative : true
     },
     {
-        pid: 5,
+        pid: 2,
         risk: 1,
         lpSymbol: 'XBT-BUSD LP',
         lpAddresses: {
             97: '',
-            56: '0xB5e5932D907690930E7F2B72A8D77C469C2Efe9c',
+            56: '0x59Ad7323970682B609241Ac3819A6aD05BBC38a2',
         },
         tokenSymbol: 'XBT',
         tokenAddresses: {
             97: '',
-            56: '0x5BbD197EeCfECB05a07909020a524bfb155c4E2a',
+            56: '0xe329102DA0E7E135656CD72CDc983c81f27CB5B6',
         },
         quoteTokenSymbol: QuoteToken.BUSD,
         quoteTokenAdresses: contracts.busd,
         isNative : true
     },
     {
-        pid: 1,
+        pid: 3,
         risk: 2,
         lpSymbol: 'BUSD-BNB LP',
         lpAddresses: {
             97: '',
-            56: '0xc8d75eafcb8e4ea84a661285af73c75a3294fe63',
+            56: '0x0A87708015EAa2a35389867E1b94f3D33173eE72',
         },
         tokenSymbol: QuoteToken.BUSD,
         tokenAddresses: contracts.busd,

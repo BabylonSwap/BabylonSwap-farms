@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback, useState } from 'react'
 import { NotificationManager } from 'react-notifications';
 import styled from 'styled-components'
-import { Route, useRouteMatch } from 'react-router-dom'
+import { Route, useRouteMatch, useLocation, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import BigNumber from 'bignumber.js'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
@@ -12,7 +12,7 @@ import FlexLayout from 'components/layout/Flex'
 import Page from 'components/layout/Page'
 import { useFarms, usePriceBnbBusd, usePriceCakeBusd } from 'state/hooks'
 import useRefresh from 'hooks/useRefresh'
-import { fetchFarmsPublicDataAsync,fetchFarmUserDataAsync ,addFarmDatas} from 'state/actions'
+import { fetchFarmsPublicDataAsync, fetchFarmUserDataAsync, addFarmDatas } from 'state/actions'
 import { QuoteToken } from 'config/constants/types'
 import useI18n from 'hooks/useI18n'
 import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
@@ -26,8 +26,15 @@ export interface FarmsProps {
     tokenMode?: boolean
 }
 
+function useQuery() {
+    return new URLSearchParams(useLocation().search);
+}
+
 const Farms: React.FC<FarmsProps> = (farmsProps) => {
     const { path } = useRouteMatch()
+    const query = useQuery();
+    const history = useHistory();
+
     const TranslateString = useI18n()
     const farmsLP = useFarms()
     const cakePrice = usePriceCakeBusd()
@@ -97,33 +104,40 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
         [bnbPrice, account, cakePrice, ethereum],
     )
 
-    const handleFind = async () => {
+    const handleFind = useCallback(async (LpAddress) => {
         let farmIndex;
         let farm;
         try {
-            farmIndex = await fetchFarmIndex(lpAddress);
+            farmIndex = await fetchFarmIndex(LpAddress);
             dispatch(addFarmDatas(farmIndex));
-            console.error("farmIndex", farmIndex);
             dispatch(fetchFarmsPublicDataAsync);
             dispatch(fetchFarmUserDataAsync(account));
             farm = await fetchFarm(farmIndex);
-            console.error("farm", farm, farms);
             setPersonalFarms([farm]);
         } catch (err: any) {
             console.log("handle find error", err.message);
 
             NotificationManager.error("invalid address", 'Find Farm failed');
         }
-    }
+    }, [account, dispatch]);
+
+    // native-farm, non native farm
+    useEffect(() => {
+        if (query.get("lp")) {
+            setIsPublic(false);
+            setLpAddress(query.get("lp"));
+            handleFind(query.get("lp"));
+        }
+    }, [])
 
     return (
         <Page>
-            <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
+            <Heading as="h1" size="lg" color="primary" mb="20px" style={{ textAlign: 'center' }}>
                 {
                     TranslateString(320, 'Stake LP Tokens To Earn Tokens')
                 }
             </Heading>
-            <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
+            <Heading as="h1" size="lg" color="primary" mb="20px" style={{ textAlign: 'center' }}>
                 Any Pair Created on BabylonSwap has a Farm where you can Earn Money
             </Heading>
             <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} isPublic={isPublic} setIsPublic={setIsPublic} />
@@ -137,6 +151,13 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
             </div>) : (
                 <div>
                     <Divider />
+                    <FlexLayout>
+                        <Wrapper>
+                            <Button style={{ height: "50px", marginLeft: "10px" }} onClick={() => {history.push("/farmfinder");}}>
+                                Fine with tokens
+                            </Button>
+                        </Wrapper>
+                    </FlexLayout>
 
                     <Heading as="h1" size="md" color="primary" mb="10px" style={{ textAlign: 'center' }}>
                         Enter LP Contract Address
@@ -144,7 +165,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
                     <FlexLayout>
                         <Wrapper>
                             <Input value={lpAddress} onChange={(e) => setLpAddress(e.target.value)} />
-                            <Button style={{ height: "50px", marginLeft: "10px" }} onClick={handleFind}>
+                            <Button style={{ height: "50px", marginLeft: "10px" }} onClick={() => handleFind(lpAddress)}>
                                 Find
                             </Button>
                         </Wrapper>

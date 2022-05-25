@@ -3,11 +3,58 @@ import erc20 from 'config/abi/erc20.json'
 import LPAbi from 'config/abi/lp.json'
 import masterchefABI from 'config/abi/masterchef.json'
 import multicall from 'utils/multicall'
-import { getMasterChefAddress } from 'utils/addressHelpers'
+import { getMasterChefAddress, getFactoryAddress } from 'utils/addressHelpers'
 import farmsConfig from 'config/constants/farms'
 import { QuoteToken } from '../../config/constants/types'
 
 const CHAIN_ID = process.env.REACT_APP_CHAIN_ID
+
+export const fetchToken = async (tokenAddress) => {
+    const calls = [
+        {
+            address: tokenAddress,
+            name: 'name'
+        },
+        {
+            address: tokenAddress,
+            name: 'symbol'
+        },
+        {
+            address: tokenAddress,
+            name: 'decimals'
+        },
+    ]
+
+    const [
+        name,
+        symbol,
+        decimals
+    ] = await multicall(erc20, calls)
+
+    return {
+        name, symbol, decimals, address: tokenAddress
+    }
+}
+
+export const fetchLPToken = async (tokenAddress1, tokenAddress2) => {
+    const calls = [
+        {
+            address: getFactoryAddress(),
+            name: 'getPair',
+            params: [tokenAddress1, tokenAddress2],
+        }
+    ]
+
+    const [
+        lpAddress
+    ] = await multicall(erc20, calls)
+
+    console.error("lpAddress", lpAddress);
+    if(lpAddress.toLowerCase() === "0x0000000000000000000000000000000000000000".toLowerCase()) throw new Error("Unregistered pair")
+    return {
+        lpAddress
+    }
+}
 
 export const fetchFarm = async (farmConfig) => {
     const lpAdress = farmConfig.lpAddresses[CHAIN_ID]
@@ -153,8 +200,7 @@ export const fetchFarmIndex = async (lpAdress) => {
         params: [lpAdress]
     }])
 
-    if (String(lpIndex) === "0" && lpAdress.toLowerCase() !== ("0x015e5da8def0679dec521fdfbf6bc8706ec5577b").toLowerCase()) {
-        console.log(String(lpIndex) === "0", lpAdress.toLowerCase() !== ("0x015e5da8def0679dec521fdfbf6bc8706ec5577b").toLowerCase());
+    if (String(lpIndex) === "0" && lpAdress.toLowerCase() !== ("0xb91Fa8c37D24cbBDfc8670a9aa7c7042DA949276").toLowerCase()) {
         throw new Error("Invalid LP address");
     }
 
