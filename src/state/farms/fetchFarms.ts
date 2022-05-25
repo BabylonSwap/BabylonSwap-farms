@@ -1,5 +1,6 @@
 import BigNumber from 'bignumber.js'
 import erc20 from 'config/abi/erc20.json'
+import factotyABI from 'config/abi/factory.json'
 import LPAbi from 'config/abi/lp.json'
 import masterchefABI from 'config/abi/masterchef.json'
 import multicall from 'utils/multicall'
@@ -37,6 +38,7 @@ export const fetchToken = async (tokenAddress) => {
 }
 
 export const fetchLPToken = async (tokenAddress1, tokenAddress2) => {
+    
     const calls = [
         {
             address: getFactoryAddress(),
@@ -47,9 +49,8 @@ export const fetchLPToken = async (tokenAddress1, tokenAddress2) => {
 
     const [
         lpAddress
-    ] = await multicall(erc20, calls)
+    ] = await multicall(factotyABI, calls)
 
-    console.error("lpAddress", lpAddress);
     if(lpAddress.toLowerCase() === "0x0000000000000000000000000000000000000000".toLowerCase()) throw new Error("Unregistered pair")
     return {
         lpAddress
