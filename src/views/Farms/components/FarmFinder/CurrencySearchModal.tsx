@@ -95,7 +95,7 @@ export default function CurrencySearchModal({
                 <Heading>
                     <RowBetween>
                         <Text color="white">
-                            Select a token
+                            Enter Token Contract Address
                         </Text>
                         <CloseIcon onClick={onDismiss} />
                     </RowBetween>
@@ -103,7 +103,7 @@ export default function CurrencySearchModal({
                 <SearchInput
                     type="text"
                     id="token-search-input"
-                    placeholder='tokenSearchPlaceholder'
+                    placeholder='Enter Token Contract Address'
                     value={searchQuery}
                     ref={inputRef as RefObject<HTMLInputElement>}
                     onChange={(e) => { SetSearchQuery(e.target.value) }}
