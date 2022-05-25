@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import {useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { Button, ChevronDownIcon, AddIcon, CardBody, Text, Heading } from '@pancakeswap-libs/uikit'
 import { NotificationManager } from 'react-notifications';
 import TranslatedText from 'components/TranslatedText'
@@ -34,16 +34,16 @@ export default function PoolFinder() {
         [activeField]
     )
 
-    const handleFindLp = useCallback(() => {
+    const handleFindLp = useCallback(async () => {
         try {
             console.error(currency0, currency1);
             if (!currency0 || !currency1) throw new Error("Invalid token");
-            const lpAddress = fetchLPToken(currency0.address, currency1.address);
+            const lpAddress = await fetchLPToken(currency0.address, currency1.address);
             history.push(`/farms?lp=${lpAddress}`)
         } catch (err) {
             NotificationManager.error("invalid address", 'Find LP failed');
         }
-    }, [fetchLPToken,currency0, currency1])
+    }, [fetchLPToken, currency0, currency1])
 
     const handleSearchDismiss = useCallback(() => {
         setShowSearch(false)
