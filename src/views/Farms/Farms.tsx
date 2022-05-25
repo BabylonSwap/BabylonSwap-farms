@@ -154,13 +154,13 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
                     <FlexLayout>
                         <Wrapper>
                             <Button style={{ height: "50px", marginLeft: "10px" }} onClick={() => {history.push("/farmfinder");}}>
-                                Fine with tokens
+                                Find Using Token Contract Address
                             </Button>
                         </Wrapper>
                     </FlexLayout>
 
                     <Heading as="h1" size="md" color="primary" mb="10px" style={{ textAlign: 'center' }}>
-                        Enter LP Contract Address
+                        Or Enter LP Contract Address
                     </Heading>
                     <FlexLayout>
                         <Wrapper>
