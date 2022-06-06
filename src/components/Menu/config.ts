@@ -31,11 +31,6 @@ const config: MenuEntry[] = [
     href: 'https://game.babylonswap.finance'
   },
   {
-    label: 'Presale',
-    icon: 'VaultsIcon',
-    href: 'https://sale.babylonswap.finance'
-  },
-  {
     label: 'Mining bank',
     icon: 'InfoIcon',
     href: 'https://babylonswap.finance/#/MiningBank'
