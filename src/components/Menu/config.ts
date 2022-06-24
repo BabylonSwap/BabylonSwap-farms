@@ -26,11 +26,6 @@ const config: MenuEntry[] = [
     href: '/farms',
   },
   {
-    label: 'Gaming',
-    icon: 'TicketIcon',
-    href: 'https://game.babylonswap.finance'
-  },
-  {
     label: 'Mining bank',
     icon: 'InfoIcon',
     href: 'https://babylonswap.finance/#/MiningBank'
@@ -39,6 +34,11 @@ const config: MenuEntry[] = [
     label: 'Glossary',
     icon: 'AuditIcon',
     href: 'https://babylonswap.gitbook.io/babylonswap/'
+  },
+  {
+    label: 'P2P Casino',
+    icon: 'TicketIcon',
+    href: 'https://game.babylonswap.finance'
   },
   // {
   //   label: 'Roulette',
