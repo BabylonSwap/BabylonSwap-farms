@@ -4,7 +4,7 @@ const config: MenuEntry[] = [
   {
     label: 'Home',
     icon: 'HomeIcon',
-    href: 'https://babylonswap.finance/#/',
+    href: 'https://babylonswap.org/#/',
   },
   {
     label: 'Trade On BNB',
