@@ -7,38 +7,44 @@ const config: MenuEntry[] = [
     href: 'https://babylonswap.finance/#/',
   },
   {
-    label: 'Trade',
+    label: 'Trade On BNB',
     icon: 'TradeIcon',
+    initialOpenState: true,
     items: [
       {
         label: 'Exchange',
-        href: 'https://babylonswap.finance/#/swap',
+        href: '/swap'
       },
       {
         label: 'Liquidity',
-        href: 'https://babylonswap.finance/#/pool',
-      },
-    ],
+        href: '/pool'
+      }
+    ]
   },
   {
-    label: 'Farming',
+    label: 'Farm On BNB',
     icon: 'FarmIcon',
-    href: '/farms',
+    href: 'https://farm.babylonswap.org'
   },
   {
-    label: 'Mining bank',
+    label: 'BNB Mining Bank',
+    icon: 'TicketIcon',
+    href: '/MiningBank'
+  },
+  {
+    label: 'XBT Price',
     icon: 'InfoIcon',
-    href: 'https://babylonswap.finance/#/MiningBank'
+    href: 'https://apy.babylonswap.org'
+  },
+  {
+    label: 'The Iceberg',
+    icon: 'MoreIcon',
+    href: 'https://lllpg.com/kww5tnmb'
   },
   {
     label: 'Glossary',
     icon: 'AuditIcon',
-    href: 'https://babylonswap.gitbook.io/babylonswap/'
-  },
-  {
-    label: 'P2P Casino',
-    icon: 'TicketIcon',
-    href: 'https://game.babylonswap.finance'
+    href: 'https://babylonswap.gitbook.io/'
   },
   // {
   //   label: 'Roulette',
